@@ -1,0 +1,109 @@
+h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #222;
+  padding: 0 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Wrapper für H2 + Button */
+.sectionWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 4px;
+  margin-top: 20px;
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Abstand zwischen Button und Überschrift */
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #222;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.workspaceContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 240px);
+  justify-content: left;
+  column-gap: clamp(18px, 4vw, 54px);
+  row-gap: 18px;
+  padding: 20px;
+}
+
+.emptyMessage {
+  color: #888;
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 20px 20px;
+  opacity: 0.9;
+}
+
+/* ✍️ Eingabefelder (Name & -bild) – Basisstil */
+.workspaceNameInput,
+.workspaceImageInput {
+  width: 93%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.2s;
+  background-color: #f9f9f9;
+}
+.workspaceImageInput {
+  flex-grow: 1;
+}
+
+/* Fokus-Stile */
+.workspaceNameInput:focus {
+  border-color: #007aff;
+  background-color: #fff;
+}
+
+.workspaceImageInput:focus {
+  border-color: #888;
+  background-color: #fff;
+}
+
+/* 🧷 -bild-Input-Zeile */
+.imageInputRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 🔄 Reload--button */
+.workspaceImageReload {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border 0.2s, background-color 0.2s;
+}
+
+.workspaceImageReload:hover {
+  background-color: #f0f0f0;
+  border-color: #888;
+}
+
+.workspaceImageReload:active {
+  background-color: #e6e6e6;
+}

@@ -1,0 +1,123 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(300px, 35vw, 400px);
+    height: fit-content;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 28px;
+    padding: 12px;
+}
+
+.description {
+    font-size: 2rem;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.loginBtn {
+    width: 100%;
+    padding: 12px 8px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: #2A9D8F;
+    color: azure;
+    outline: none;
+    border: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.loginBtn:hover {
+    background: #5DB6AA;
+    cursor: pointer;
+}
+
+.switchModeText {
+    margin-bottom: 4px;
+    color: #333;
+    font-size: 1rem;
+}
+
+.switchLink {
+  color: #2A9D8F;
+  cursor: pointer;
+}
+.switchLink:hover {
+  color: #5DB6AA;
+}
+
+.floatingInputContainer {
+    width: 100%;
+    position: relative;
+}
+
+.floatingInputContainer input {
+    width: 100%;
+    padding: 12px 36px 12px 14px; /* Platz für den Button rechts */
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.floatingInputContainer label {
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    background: white;
+    padding: 0 4px;
+    color: #888;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* Floating effect */
+.floatingInputContainer input:focus + label,
+.floatingInputContainer label.active {
+    top: -8px;
+    left: 14px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Optional: Focus border highlight */
+.floatingInputContainer input:focus {
+    border-color: #5DB6AA;
+}
+
+/* Toggle Button Style */
+.toggleButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.forgotPassword {
+    align-self: flex-start;
+    font-size: 1rem;
+    margin-left: 4px;
+    color: #2A9D8F;
+    cursor: pointer;
+}
+.forgotPassword:hover {
+    color: #5DB6AA;
+}
+
