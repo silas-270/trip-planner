@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAccommodations } from '../hooks/useAccommodations'
 import { Accommodations } from '../components/accommodation/Accommodations'
-import Header from '../components/uielements/header';
+import Header from '../components/uielements/Header';
 
 export function AccommodationView() {
     const { accoms, workspaceMeta, addAccom, deleteAccom, vote } = useAccommodations();
