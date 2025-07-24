@@ -3,7 +3,7 @@ import React from 'react';
 import { useWorkspaces } from '../hooks/useWorkspaces';
 import { OwnWorkspaces } from '../components/workspace/OwnWorkspaces';
 import { SharedWorkspaces } from '../components/workspace/SharedWorkspaces';
-import Header from '../components/uielements/header';
+import Header from '../components/uielements/Header';
 
 export function WorkspaceView() {
     const { owned, shared, addWs, deleteWs, accesWs } = useWorkspaces();
