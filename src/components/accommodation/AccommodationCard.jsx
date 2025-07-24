@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState } from "react";
 import { placeholderImages } from '../../config';
 import { BtnUp, BtnDown, Edit, Trashcan } from "../../assets/svg";

@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getCards, addCard, deleteCard, submitVote } from '../services/api';
+import { getCards, getWorkspaceMeta, addCard, deleteCard, submitVote } from '../services/api';
 import { useAuth } from './useAuth';
 import { useParams } from 'react-router-dom';
 
@@ -15,12 +15,23 @@ export function useAccommodations() {
         error,
         refetch,
     } = useQuery({
-        queryKey: ['accommodations', workspaceId],
-        queryFn: () => getCards(workspaceId),
-        enabled: !!workspaceId,
+        queryKey: ['accommodations', workspaceId, userId], // userId zur Differenzierung
+        queryFn: () => getCards(workspaceId),              // API bleibt gleich
+        enabled: !!workspaceId && !!userId,
         staleTime: 1000 * 60 * 5,
-        refetchInterval: 1000 * 30, // alle 30s automatisch aktualisieren
-        refetchIntervalInBackground: false, // nur bei aktivem Tab
+        refetchInterval: 1000 * 30,
+        refetchIntervalInBackground: false,
+    });
+
+    const {
+        data: workspaceMeta,
+        isLoading: metaLoading,
+        error: metaError,
+    } = useQuery({
+        queryKey: ['workspaceMeta', workspaceId],
+        queryFn: () => getWorkspaceMeta(workspaceId),
+        enabled: !!workspaceId,
+        staleTime: 1000 * 60 * 10,
     });
 
     // Mutation zum Erstellen
@@ -61,6 +72,7 @@ export function useAccommodations() {
 
     return {
         accoms,
+        workspaceMeta,
         isLoading,
         error,
         refetch,

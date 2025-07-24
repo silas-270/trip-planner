@@ -24,6 +24,18 @@ const apiFetch = async (url, options = {}) => {
     });
 };
 
+// Get workspace data
+export async function getWorkspaceMeta(workspaceId) {
+    try {
+        const response = await apiFetch(`${CONFIG.API_URL}/workspaces/${workspaceId}`, {
+            method: 'GET',
+        });
+        return await response.json();
+    } catch (err) {
+        console.error('Fehler:', err.message);
+    }
+}
+
 // Get all Workspaces for a User
 export async function getWorkspaces() {
     try {
@@ -51,6 +63,16 @@ export async function deleteWorkspace(workspaceId) {
     const response = await apiFetch(`${CONFIG.API_URL}/workspaces/${workspaceId}`, {
         method: 'DELETE',
     });
+}
+
+// Request Access for Workspace
+export async function requestAccess(accessLink) {
+    const response = await apiFetch(`${CONFIG.API_URL}/workspaces/access`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ accessLink }), // Objekt -> JSON-String
+    });
+    return await response.json();
 }
 
 // Get all Cards in a Workspace

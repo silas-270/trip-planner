@@ -9,7 +9,9 @@
   flex-direction: column;
   background: #ececec;
   border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.6),
+    0 1px 1px rgba(255, 255, 255, 0.06);
   cursor: pointer;
   overflow: hidden;
 }
@@ -43,15 +45,16 @@
   bottom: 0;
   width: 100%;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--overlay);
   z-index: 1;
   overflow: hidden;
 }
 
 .info h2 {
+  font-weight: 400;
   padding-right: 20px;
   font-size: 1.5rem;
-  color: #343434;
+  color: var(--text);
   margin: 0;
   display: -webkit-box;
   display: box;
@@ -78,7 +81,7 @@
   aspect-ratio: 4.2 / 3;
   display: flex;
   flex-direction: column;
-  background: #ececec;
+  background: var(--bg);
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -90,15 +93,16 @@
   bottom: 0;
   width: 100%;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--overlay);
   z-index: 1;
   overflow: hidden;
 }
 
 .PreviewCardInfo h2 {
+  font-weight: 400;
+  color: var(--text);
   padding-right: 20px;
   font-size: 2.5rem;
-  color: #343434;
   margin: 0;
   display: -webkit-box;
   display: box;

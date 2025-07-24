@@ -1,19 +1,8 @@
-h1 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #222;
-  padding: 0 20px;
-  margin-bottom: 16px;
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-
 /* Wrapper für H2 + Button */
 .sectionWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
   margin-bottom: 4px;
   margin-top: 20px;
 }
@@ -21,31 +10,40 @@ h1 {
 .leftGroup {
   display: flex;
   align-items: center;
-  gap: 12px; /* Abstand zwischen Button und Überschrift */
+  gap: 12px;
+  /* Abstand zwischen Button und Überschrift */
 }
 
 .sectionHeading {
   font-size: 1.8rem;
   font-weight: 500;
-  color: #222;
+  color: var(--text);
   margin: 0;
   margin-top: 5px;
 }
 
 .workspaceContainer {
+  margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 240px);
+  grid-template-columns: repeat(auto-fit, 280px);
   justify-content: left;
   column-gap: clamp(18px, 4vw, 54px);
   row-gap: 18px;
-  padding: 20px;
+  padding: 20px 20px;
+
+  background: rgba(255, 255, 255, 0.05); /* sehr transparent */
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .emptyMessage {
-  color: #888;
+  color: var(--text-muted);
   font-size: 1.2rem;
   text-align: left;
-  padding: 20px 20px;
+  padding: 20px 0;
   opacity: 0.9;
 }
 
@@ -55,25 +53,27 @@ h1 {
   width: 93%;
   padding: 10px 14px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-muted);
   border-radius: 8px;
   outline: none;
   transition: border 0.2s;
-  background-color: #f9f9f9;
+  background: var(--bg);
+  color: var(--text);
 }
+
 .workspaceImageInput {
   flex-grow: 1;
 }
 
 /* Fokus-Stile */
 .workspaceNameInput:focus {
-  border-color: #007aff;
-  background-color: #fff;
+  border-color: var(--border);
+  background-color: var(--bg-light);
 }
 
 .workspaceImageInput:focus {
-  border-color: #888;
-  background-color: #fff;
+  border-color: var(--border);
+  background-color: var(--bg-light);
 }
 
 /* 🧷 -bild-Input-Zeile */
@@ -92,18 +92,21 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
+  border: 2px solid var(--primary);
+  color: var(--primary);
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: transparent;
   cursor: pointer;
   transition: border 0.2s, background-color 0.2s;
 }
 
-.workspaceImageReload:hover {
-  background-color: #f0f0f0;
-  border-color: #888;
+@media (hover: hover) {
+  .workspaceImageReload:hover {
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+  }
 }
 
 .workspaceImageReload:active {
-  background-color: #e6e6e6;
+  background-color: var(--bg-light);
 }

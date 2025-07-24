@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState } from "react";
 import { useImageSearch } from "../../hooks/useImageSearch";
 import { WorkspaceCard, WorkspacePreview } from './WorkspaceCard';
@@ -5,8 +7,15 @@ import { AddButton, Popup } from '../uielements/uielements';
 import { ReloadSVG } from "../../assets/svg";
 import { placeholderImages } from "../../config";
 import styles from './Workspaces.module.css';
+import { useDevice } from '../../hooks/useDevice';
 
 export function OwnWorkspaces({ workspaces, onAddWorkspace, onDeleteWorkspace }) {
+    const { isMobile } = useDevice();
+
+    const gridStyle = isMobile
+        ? { gridTemplateColumns: '1fr', justifyContent: 'stretch' }
+        : {};
+
     const [showPopup, setShowPopup] = useState(false);
     const [name, setName] = useState("");
     const [query, setQuery] = useState("");
@@ -27,19 +36,26 @@ export function OwnWorkspaces({ workspaces, onAddWorkspace, onDeleteWorkspace })
         setCurrentIndex(0);
         reset();
     };
-    
+
     return (
         <div>
             <div className={styles.sectionWrapper}>
                 <div className={styles.leftGroup}>
                     <h2 className={styles.sectionHeading}>Meine Sammlungen</h2>
                 </div>
-                <AddButton text="➕ Workspace hinzufügen" className="addButton" onClick={() => setShowPopup(true)} />
+                <AddButton mobileText='➕' desktopText='➕ Workspace hinzufügen' className="addButton" onClick={() => setShowPopup(true)} />
             </div>
+
             <div className="divider" />
+
             {(workspaces && workspaces.length > 0) ? (
-                <div className={styles.workspaceContainer}>
-                    {workspaces.map(ws => <WorkspaceCard key={ws.id} {...ws} />)}
+                <div
+                    className={styles.workspaceContainer}
+                    style={gridStyle}
+                >
+                    {workspaces.map(ws => (
+                        <WorkspaceCard key={ws.id} {...ws} />
+                    ))}
                 </div>
             ) : (
                 <div className={styles.emptyMessage}>Keine Workspaces.</div>

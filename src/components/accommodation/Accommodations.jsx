@@ -1,12 +1,13 @@
+import React from 'react';
+
 import { useState } from "react";
 import { AddButton, Popup } from '../uielements/uielements';
 import { IconT, IconBooking, IconImmoScout } from "../../assets/svg";
 import styles from './Accommodations.module.css';
 import { AccommodationCard } from "./AccommodationCard";
-import { getWorkspaceName } from "../../config";
 import { useNavigate } from "react-router-dom";
 
-export function Accommodations({ accommodations, onAddAccommodation, onDeleteAccommodation, onVote }) {
+export function Accommodations({ accommodations, wsMeta, onAddAccommodation, onDeleteAccommodation, onVote }) {
     const [showPopup, setShowPopup] = useState(false);
     const [createMethod, setMethod] = useState("raw");
     const [scraperUrl, setSraperUrl] = useState("");
@@ -73,7 +74,7 @@ export function Accommodations({ accommodations, onAddAccommodation, onDeleteAcc
             <div className={styles.sectionWrapper}>
                 <div className={styles.leftGroup}>
                     <AddButton text="<" className="returnButton" onClick={backToSpaces} />
-                    <h2 className={styles.sectionHeading}>{getWorkspaceName()}</h2>
+                    <h2 className={styles.sectionHeading}>{wsMeta?.name?.trim() || 'Workspace'}</h2>
                 </div>
                 <AddButton text="➕ Unterkunft hinzufügen" className="addButton" onClick={() => setShowPopup(true)} />
             </div>

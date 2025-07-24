@@ -10,7 +10,7 @@
     transform: translate(-50%, -50%);
     width: clamp(300px, 35vw, 400px);
     height: fit-content;
-    background: white;
+    background: var(--bg);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 28px;
     padding: 12px;
@@ -20,6 +20,7 @@
     font-size: 2rem;
     margin-top: 12px;
     margin-bottom: 12px;
+    color: var(--text);
 }
 
 .loginBtn {
@@ -29,30 +30,35 @@
     letter-spacing: 1px;
     box-sizing: border-box;
     border-radius: 20px;
-    background: #2A9D8F;
-    color: azure;
+    background: var(--primary);
+    color: var(--text);
     outline: none;
     border: none;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.loginBtn:hover {
-    background: #5DB6AA;
-    cursor: pointer;
+@media (hover: hover) {
+    .loginBtn:hover {
+        background: var(--primary-light);
+        cursor: pointer;
+    }
 }
 
 .switchModeText {
     margin-bottom: 4px;
-    color: #333;
+    color: var(--text-muted);
     font-size: 1rem;
 }
 
 .switchLink {
-  color: #2A9D8F;
-  cursor: pointer;
+    color: var(--primary);
+    cursor: pointer;
 }
-.switchLink:hover {
-  color: #5DB6AA;
+
+@media (hover: hover) {
+    .switchLink:hover {
+        color: var(--primary-light);
+    }
 }
 
 .floatingInputContainer {
@@ -62,39 +68,41 @@
 
 .floatingInputContainer input {
     width: 100%;
-    padding: 12px 36px 12px 14px; /* Platz für den Button rechts */
+    padding: 12px 36px 12px 14px;
+    /* Platz für den Button rechts */
     font-size: 16px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-muted);
     border-radius: 20px;
     outline: none;
     box-sizing: border-box;
     background: transparent;
+    color: var(--text);
 }
 
 .floatingInputContainer label {
     position: absolute;
     left: 12px;
     top: 14px;
-    background: white;
+    background: var(--bg);
     padding: 0 4px;
-    color: #888;
+    color: var(--text);
     font-size: 1rem;
     pointer-events: none;
     transition: all 0.2s ease;
 }
 
 /* Floating effect */
-.floatingInputContainer input:focus + label,
+.floatingInputContainer input:focus+label,
 .floatingInputContainer label.active {
     top: -8px;
     left: 14px;
     font-size: 12px;
-    color: #333;
+    color: var(--text-muted);
 }
 
 /* Optional: Focus border highlight */
 .floatingInputContainer input:focus {
-    border-color: #5DB6AA;
+    border-color: var(--primary);
 }
 
 /* Toggle Button Style */
@@ -114,10 +122,12 @@
     align-self: flex-start;
     font-size: 1rem;
     margin-left: 4px;
-    color: #2A9D8F;
+    color: var(--primary);
     cursor: pointer;
 }
-.forgotPassword:hover {
-    color: #5DB6AA;
-}
 
+@media (hover: hover) {
+    .forgotPassword:hover {
+        color: var(--primary-light);
+    }
+}

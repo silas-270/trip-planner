@@ -1,14 +1,40 @@
+import React from 'react';
+
 import ReactDOM from "react-dom";
 import styles from './uielements.module.css';
+import { logout } from "../../services/auth";
+import { useNavigate } from 'react-router-dom';
+import { useDevice } from '../../hooks/useDevice';
+
+export function LogoutButton() {
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try {
+            await logout();
+            navigate('/login');
+        } catch (err) {
+            alert(err.message);
+        }
+    };
+
+    return (
+        <button className={styles.logoutBtn} onClick={handleLogout}>
+            Logout
+        </button>
+    );
+}
 
 export function AddButton({
-    text,
+    mobileText = '',
+    desktopText = '',
     className,
     onClick
 }) {
+    const { isMobile } = useDevice();
     return (
         <button className={className} onClick={onClick}>
-            {text}
+            {isMobile ? mobileText : desktopText}
         </button>
     );
 }

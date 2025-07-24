@@ -1,24 +1,18 @@
+import React from 'react';
+
 import { useAccommodations } from '../hooks/useAccommodations'
 import { Accommodations } from '../components/accommodation/Accommodations'
-import { logout } from '../services/auth';
+import Header from '../components/uielements/header';
 
 export function AccommodationView() {
-    const { accoms, addAccom, deleteAccom, vote } = useAccommodations();
-
-    const handleLogout = async () => {
-        try {
-            await logout();
-            navigate('/login');
-        } catch (err) {
-            alert(err.message);
-        }
-    };
+    const { accoms, workspaceMeta, addAccom, deleteAccom, vote } = useAccommodations();
 
     return (
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <button onClick={handleLogout}>Logout</button>
+            <Header />
             <Accommodations
                 accommodations={accoms}
+                wsMeta={workspaceMeta}
                 onAddAccommodation={addAccom}
                 onDeleteAccommodation={deleteAccom}
                 onVote={vote}

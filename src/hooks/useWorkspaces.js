@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getWorkspaces, addWorkspace, deleteWorkspace } from '../services/api';
+import { getWorkspaces, addWorkspace, deleteWorkspace, requestAccess } from '../services/api';
 import { useAuth } from './useAuth';
 
 export function useWorkspaces() {
@@ -38,13 +38,25 @@ export function useWorkspaces() {
         },
     });
 
+    // Mutation zum Annehmen eines Share Link
+    const accessMutation = useMutation({
+        mutationFn: requestAccess,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['workspaces', userId] });
+        }
+    });
+
     const addWs = async (body) => {
         await createMutation.mutateAsync(body);
     };
 
-    const deleteWs = async () => {
+    const deleteWs = async (workspaceId) => {
         await deleteMutation.mutateAsync(workspaceId)
     };
+
+    const accesWs = async (accessLink) => {
+        await accessMutation.mutateAsync(accessLink);
+    }
 
     return {
         owned,
@@ -53,6 +65,7 @@ export function useWorkspaces() {
         error,
         refetch,
         addWs,
-        deleteWs
+        deleteWs,
+        accesWs
     };
 }

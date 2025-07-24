@@ -1,25 +1,16 @@
+import React from 'react';
+
 import { useWorkspaces } from '../hooks/useWorkspaces';
 import { OwnWorkspaces } from '../components/workspace/OwnWorkspaces';
 import { SharedWorkspaces } from '../components/workspace/SharedWorkspaces';
-import { useNavigate } from 'react-router-dom';
-import { logout } from '../services/auth';
+import Header from '../components/uielements/header';
 
 export function WorkspaceView() {
-    const { owned, shared, addWs, deleteWs } = useWorkspaces();
-    const navigate = useNavigate();
-
-    const handleLogout = async () => {
-        try {
-            await logout();
-            navigate('/login');
-        } catch (err) {
-            alert(err.message);
-        }
-    };
+    const { owned, shared, addWs, deleteWs, accesWs } = useWorkspaces();
 
     return (
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <button onClick={handleLogout}>Logout</button>
+            <Header />
             <OwnWorkspaces
                 workspaces={owned}
                 onAddWorkspace={addWs}
@@ -27,6 +18,7 @@ export function WorkspaceView() {
             />
             <SharedWorkspaces
                 workspaces={shared}
+                onAccessWorkspace={accesWs}
             />
         </div>
     );

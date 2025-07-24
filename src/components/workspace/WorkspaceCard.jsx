@@ -1,4 +1,6 @@
-import { placeholderImages, setWorkspaceName } from '../../config';
+import React from 'react';
+
+import { placeholderImages } from '../../config';
 import styles from './WorkspaceCard.module.css';
 import { useEffect, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'

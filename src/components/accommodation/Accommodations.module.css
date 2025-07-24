@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0;
   margin-bottom: 4px;
   margin-top: 20px;
 }
@@ -16,26 +16,34 @@
 .sectionHeading {
   font-size: 1.8rem;
   font-weight: 500;
-  color: #222;
+  color: var(--text);
   letter-spacing: 1px;
   margin: 0;
   margin-top: 5px;
 }
 
 .workspaceContainer {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
   justify-content: left;
   column-gap: clamp(18px, 4vw, 54px);
   row-gap: 18px;
-  padding: 20px;
+  padding: 20px 20px;
+
+  background: rgba(255, 255, 255, 0.05); /* sehr transparent */
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .emptyMessage {
-  color: #888;
+  color: var(--text-muted);
   font-size: 1.2rem;
   text-align: left;
-  padding: 20px 20px;
+  padding: 20px 0;
   opacity: 0.9;
 }
 
@@ -50,9 +58,9 @@
 
 .authButton {
   height: 40px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-muted);
   border-radius: 6px;
-  background: white;
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,14 +78,16 @@
 }
 
 .inactive {
+  border-color: var(--border-muted);
   min-width: 40px;
   padding: 0;
 }
 
 .active {
+  border-color: var(--border);
   min-width: 150px;
   padding: 0 12px;
-  background-color: #f0f0f0;
+  background-color: var(--bg);
   font-weight: bold;
 }
 
@@ -94,6 +104,8 @@
   top: 0;
   left: 0;
   pointer-events: none;
+  color: var(--text);
+  letter-spacing: 0.5px;
 }
 
 .iconWrapper {
@@ -116,7 +128,6 @@
   font-size: 20px;
 }
 
-
 .inputWrapper {
   width: 100%;
   display: flex;
@@ -135,39 +146,16 @@
   flex: 1;
   padding: 10px 14px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-muted);
   border-radius: 8px;
   outline: none;
   transition: border 0.2s;
-  background-color: #f9f9f9;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 /* Fokus-Stile */
 .Input:focus {
-  border-color: #007aff;
-  background-color: #fff;
-}
-
-.toggleButton {
-  width: 66%;
-  padding: 10px 14px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
-  margin-bottom: 12px; /* Abstand zu den Feldern darunter */
-}
-
-.toggleButton:hover {
-  background-color: #f0f0f0;
-  border-color: #007aff;
-}
-
-.toggleButton:focus {
-  outline: none;
-  border-color: #007aff;
-  background-color: #fff;
+  border-color: var(--border);
+  background-color: var(--bg-light);
 }
