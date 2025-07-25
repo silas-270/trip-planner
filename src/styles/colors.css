@@ -1,0 +1,80 @@
+:root {
+  /* hsl (fallback color) */
+  --bg-dark: hsl(336 0% 1%);
+  --bg: hsl(330 0% 4%);
+  --bg-light: hsl(0 0% 9%);
+  --overlay: hsl(330 0% 4% 0.7);
+  /* Wurde geändert */
+  --text: hsl(0 0% 95%);
+  --text-muted: hsl(300 0% 69%);
+  --highlight: hsl(330 0% 39%);
+  --border: hsl(0 0% 28%);
+  --border-muted: hsl(300 0% 18%);
+  --primary: hsl(320 50% 73%);
+  --primary-light: hsl(149 41% 62%);
+  --secondary: hsl(149 41% 62%);
+  --danger: hsl(9 26% 64%);
+  --warning: hsl(52 19% 57%);
+  --success: hsl(146 17% 59%);
+  --info: hsl(217 28% 65%);
+  /* oklch */
+  --bg-dark: oklch(0.1 0 340);
+  /* Wurde geändert */
+  --bg: oklch(0.2 0 340);
+  /* Wurde geändert */
+  --bg-light: oklch(0.3 0 340);
+  /* Wurde geändert */
+  --overlay: oklch(0.2 0 340 / 0.7);
+  /* Wurde geändert */
+  --text: oklch(0.96 0 340);
+  --text-muted: oklch(0.76 0 340);
+  --highlight: oklch(0.5 0 340);
+  --border: oklch(0.4 0 340);
+  --border-muted: oklch(0.3 0 340);
+  --primary: hsl(173, 58%, 39%);
+  /* Wurde geändert */
+  --secondary: hsl(173, 58%, 39%);
+  /* Wurde geändert */
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+
+  --success-rgb: 56, 189, 84;
+  --danger-rgb: 220, 38, 38;
+  --info-rgb: 59, 130, 246;
+  --warning-rgb: 252, 211, 77;
+}
+
+body.light {
+  /* hsl (fallback color) */
+  --bg-dark: hsl(0 0% 90%);
+  --bg: hsl(0 0% 95%);
+  --bg-light: hsl(300 50% 100%);
+  --text: hsl(330 0% 4%);
+  --text-muted: hsl(0 0% 28%);
+  --highlight: hsl(300 50% 100%);
+  --border: hsl(300 0% 50%);
+  --border-muted: hsl(340 0% 62%);
+  --primary: hsl(318 38% 30%);
+  --secondary: hsl(160 100% 13%);
+  --danger: hsl(9 21% 41%);
+  --warning: hsl(52 23% 34%);
+  --success: hsl(147 19% 36%);
+  --info: hsl(217 22% 41%);
+  /* oklch */
+  --bg-dark: oklch(0.92 0 340);
+  --bg: oklch(0.96 0 340);
+  --bg-light: oklch(1 0 340);
+  --text: oklch(0.15 0 340);
+  --text-muted: oklch(0.4 0 340);
+  --highlight: oklch(1 0 340);
+  --border: oklch(0.6 0 340);
+  --border-muted: oklch(0.7 0 340);
+  --primary: oklch(0.4 0.1 340);
+  --secondary: oklch(0.4 0.1 160);
+  --danger: oklch(0.5 0.05 30);
+  --warning: oklch(0.5 0.05 100);
+  --success: oklch(0.5 0.05 160);
+  --info: oklch(0.5 0.05 260);
+}

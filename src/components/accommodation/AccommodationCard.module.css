@@ -1,0 +1,251 @@
+.card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  aspect-ratio: 3.07 / 3;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.info {
+  padding: 8px 12px 6px;
+}
+
+.rowTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rowTop h2 {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 8px;
+  /* Abstand zum Preis */
+}
+
+.nameLink {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: block;
+  /* wichtig für overflow */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (hover: hover) {
+  .nameLink:hover {
+    color: var(--primary-light);
+  }
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary);
+  flex-shrink: 0;
+  /* verhindert Zeilenumbruch */
+  white-space: nowrap;
+  /* bleibt in einer Zeile */
+  padding-left: 6px;
+  /* „+6px“-Effekt */
+}
+
+.rowBottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* Voting-UI */
+.btnWrapper {
+  width: fit-content;
+  height: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background: var(--bg-light);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  user-select: none;
+}
+
+.voteBtn {
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.editBtn {
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.voteBtn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2px;
+  pointer-events: none;
+  transition: color 0.2s ease, fill 0.2s ease;
+  overflow: visible;
+}
+
+@media (hover: hover) {
+  .voteBtn.voteUp:hover svg {
+    color: var(--primary);
+  }
+}
+
+@media (hover: hover) {
+  .voteBtn.voteDown:hover svg {
+    color: #e07a7a;
+  }
+}
+
+.voteBtn.voteUp.active svg {
+  color: var(--primary);
+  fill: var(--primary);
+}
+
+.voteBtn.voteDown.active svg {
+  color: #e07a7a;
+  fill: #e07a7a;
+}
+
+.voteCount {
+  font-size: 1rem;
+  min-width: 16px;
+  margin: 0 4px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  padding-bottom: 12px;
+  margin: 0 12px 12px;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.editBtn svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--text-muted);
+  stroke: none;
+  pointer-events: none;
+  transition: color 0.2s ease, fill 0.2s ease;
+  overflow: visible;
+}
+
+@media (hover: hover) {
+  .editBtn:hover svg {
+    fill: var(--text)
+  }
+}
+
+.pop {
+  animation: pop 200ms ease-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(0.85);
+  }
+
+  60% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.editPopup {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(12px);
+  background: #ececec;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  padding: 6px;
+}
+
+.buttonList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: max-content;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+}
+
+@media (hover: hover) {
+  .iconButton:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.editButtonIcon {
+  width: 16px;
+  height: 16px;
+  fill: #888;
+  margin-right: 7px;
+  margin-left: 2px;
+}
+
+.deleteButtonIcon {
+  width: 20px;
+  height: 20px;
+  fill: #e07a7a;
+  margin-right: 5px;
+}

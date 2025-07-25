@@ -1,0 +1,54 @@
+.toast {
+  padding: 12px;
+  width: fit-content;
+  max-width: 80vw;
+  height: fit-content;
+  border-radius: 12px; /* Etwas rundere Ecken für den modernen Look */
+  color: var(--text);
+  font-size: 16px;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-100%);
+  background: rgba(255, 255, 255, 0.15); /* Etwas mehr Transparenz */
+  backdrop-filter: blur(20px); /* Stärkerer Blur-Effekt */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Etwas stärkerer Rahmen für den Glass-Effekt */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtiler Schatten für mehr Tiefe */
+  animation: toastAnimation 3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; /* Sanftere Animation */
+}
+
+/* Farben für den Status */
+.success {
+  background: rgba(var(--success-rgb), 0.2); /* Etwas weichere Transparenz für den Erfolg */
+}
+
+.error {
+  background: rgba(var(--danger-rgb), 0.2); /* Etwas weichere Transparenz für Fehler */
+}
+
+.warn {
+  background: rgba(var(--warning-rgb), 0.2);
+}
+
+.info {
+  background: rgba(var(--info-rgb), 0.2); /* Etwas weichere Transparenz für Info */
+}
+
+/* Animation für das Einblenden und Ausblenden */
+@keyframes toastAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);  /* Toast kommt von links */
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(0);      /* Toast ist fast vollständig sichtbar */
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(0);      /* Toast bleibt sichtbar in der Mitte */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);   /* Toast geht nach rechts, während er verblasst */
+  }
+}
