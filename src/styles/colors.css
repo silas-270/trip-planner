@@ -23,6 +23,7 @@
   --bg: oklch(0.2 0 340);
   /* Wurde geändert */
   --bg-light: oklch(0.3 0 340);
+  --bg-light2: oklch(0.4 0 340);
   /* Wurde geändert */
   --overlay: oklch(0.2 0 340 / 0.7);
   /* Wurde geändert */

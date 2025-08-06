@@ -1,8 +1,18 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getWorkspaces, addWorkspace, deleteWorkspace, requestAccess } from '../services/api';
-import { useAuth } from './useAuth';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { getWorkspaces, addWorkspace, updateWorkspace, deleteWorkspace, requestAccess } from '../services/api/api'
+import { useAuth } from './Auth/useAuth'
 
-export function useWorkspaces() {
+/* Workspace Object:
+    {
+        id: string,
+        name: string,
+        owner_id: string,
+        image: Object { alt, src}
+        created_at: Date
+    }
+*/
+
+const useWorkspaces = () => {
     const queryClient = useQueryClient();
     const { user } = useAuth();
     const userId = user?.id;
@@ -30,6 +40,14 @@ export function useWorkspaces() {
         },
     });
 
+    // Mutation zum Aktualisieren
+    const updateMutation = useMutation({
+        mutationFn: updateWorkspace,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['workspaces', userId] });
+        },
+    });
+
     // Mutation zum Löschen
     const deleteMutation = useMutation({
         mutationFn: deleteWorkspace,
@@ -50,6 +68,10 @@ export function useWorkspaces() {
         await createMutation.mutateAsync(body);
     };
 
+    const updateWs = async (body) => {
+        await updateMutation.mutateAsync(body);
+    }
+
     const deleteWs = async (workspaceId) => {
         await deleteMutation.mutateAsync(workspaceId)
     };
@@ -65,7 +87,10 @@ export function useWorkspaces() {
         error,
         refetch,
         addWs,
+        updateWs,
         deleteWs,
         accesWs
     };
 }
+
+export default useWorkspaces;

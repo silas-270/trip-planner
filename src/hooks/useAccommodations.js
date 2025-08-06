@@ -1,9 +1,9 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getCards, getWorkspaceMeta, addCard, deleteCard, submitVote } from '../services/api';
-import { useAuth } from './useAuth';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { getCards, getWorkspaceMeta, addCard, deleteCard, submitVote } from '../services/api/api'
+import { useAuth } from './Auth/useAuth'
 import { useParams } from 'react-router-dom';
 
-export function useAccommodations() {
+const useAccommodations = () => {
     const queryClient = useQueryClient();
     const { user } = useAuth();
     const userId = user?.id;
@@ -66,7 +66,7 @@ export function useAccommodations() {
         await deleteMutation.mutateAsync({ workspaceId, cardId });
     }
 
-    const vote = async (cardId, voteValue) => {
+    const voteAccom = async (cardId, voteValue) => {
         await voteMutation.mutateAsync({ cardId, vote: voteValue });
     };
 
@@ -78,6 +78,8 @@ export function useAccommodations() {
         refetch,
         addAccom,
         deleteAccom,
-        vote,
+        voteAccom,
     };
 }
+
+export default useAccommodations;
