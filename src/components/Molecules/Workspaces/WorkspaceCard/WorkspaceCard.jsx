@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
-import ImagePlaceholder from '../../../../assets/imagePlaceholder'
+import ImagePlaceholder from '../../../../assets/ImagePlaceholder'
 import { placeholderImages } from '../../../../config'
-import styles from './WorkspaceCard.module.css'
+import styles from './WorkspaceCard.module.css' 
 
 const WorkspaceCard = ({
     id,
