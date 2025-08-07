@@ -1,0 +1,52 @@
+.floatingInputContainer {
+    width: 100%;
+    position: relative;
+}
+
+.floatingInputContainer input {
+    width: 100%;
+    padding: 12px 36px 12px 14px;
+    font-size: 16px;
+    border: 2px solid var(--border-muted);
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+    color: var(--text);
+}
+
+.floatingInputContainer label {
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    background: var(--bg);
+    padding: 0 4px;
+    color: var(--text);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.floatingInputContainer input:focus+label,
+.floatingInputContainer label.active {
+    top: -8px;
+    left: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.floatingInputContainer input:focus {
+    border-color: var(--primary);
+}
+
+.toggleButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+}

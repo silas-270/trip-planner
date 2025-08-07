@@ -1,0 +1,56 @@
+.contextMenu {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(12px);
+  background: var(--bg-light);
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  padding: 4px;
+}
+
+.buttonList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: max-content;
+}
+
+.iconButton {
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  color: var(--text-muted)
+}
+.red {
+  color: #e07a7a;
+}
+
+@media (hover: hover) {
+  .iconButton:hover {
+    background-color: var(--bg-light2);
+  }
+}
+
+.editButtonIcon {
+  width: 16px;
+  height: 16px;
+  fill: #888;
+  margin-right: 7px;
+  margin-left: 2px;
+}
+
+.deleteButtonIcon {
+  width: 20px;
+  height: 20px;
+  fill: #e07a7a;
+  margin-right: 5px;
+}

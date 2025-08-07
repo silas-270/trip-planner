@@ -1,0 +1,66 @@
+/* Voting-UI */
+.btnWrapper {
+  width: fit-content;
+  height: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background: var(--bg-light);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  user-select: none;
+}
+
+.voteCount {
+  font-size: 1rem;
+  min-width: 16px;
+  margin: 0 4px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.voteBtn {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.voteBtn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2px;
+  pointer-events: none;
+  transition: color 0.2s ease, fill 0.2s ease;
+  overflow: visible;
+}
+
+@media (hover: hover) {
+  .voteBtn.voteUp:hover svg {
+    color: var(--primary);
+  }
+}
+
+@media (hover: hover) {
+  .voteBtn.voteDown:hover svg {
+    color: #e07a7a;
+  }
+}
+
+.voteBtn.voteUp.active svg {
+  color: var(--primary);
+  fill: var(--primary);
+}
+
+.voteBtn.voteDown.active svg {
+  color: #e07a7a;
+  fill: #e07a7a;
+}
