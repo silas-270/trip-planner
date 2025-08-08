@@ -1,3 +1,5 @@
+import React from 'react'
+
 import ProfilePicturePlaceholder from '../../../assets/profilePicturePlaceholder'
 import styles from './ImageButton.module.css'
 
