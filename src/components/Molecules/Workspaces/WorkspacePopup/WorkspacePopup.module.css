@@ -1,26 +1,24 @@
 .workspaceNameInput,
 .workspaceImageInput {
   font-family: 'Rubik', sans-serif;
-  width: 93%;
+  width: 100%;
   padding: 10px 14px;
   font-size: 1rem;
   border-radius: 12px;
   outline: none;
   transition: border 0.2s;
   color: var(--text);
-}
-
-.workspaceImageInput {
-  flex-grow: 1;
+  box-sizing: border-box;
 }
 
 /* Fokus-Stile */
+.workspaceImageInput:focus,
 .workspaceNameInput:focus {
   border-color: var(--border);
 }
 
-.workspaceImageInput:focus {
-  border-color: var(--border);
+.workspaceImageInput {
+  flex-grow: 1;
 }
 
 /* 🧷 -bild-Input-Zeile */
@@ -28,7 +26,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 /* 🔄 Reload--button */

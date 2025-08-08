@@ -12,7 +12,8 @@
   --border-muted: hsl(300 0% 18%);
   --primary: hsl(320 50% 73%);
   --primary-light: hsl(149 41% 62%);
-  --secondary: hsl(149 41% 62%);
+  --secondary: hsl(0, 62%, 68%);
+  --secondary-light: hsl(0, 62%, 80%);
   --danger: hsl(9 26% 64%);
   --warning: hsl(52 19% 57%);
   --success: hsl(146 17% 59%);
@@ -34,9 +35,8 @@
   --border-muted: oklch(0.3 0 340);
   --primary: hsl(173, 58%, 39%);
   /* Wurde geändert */
-  --secondary: hsl(173, 58%, 39%);
-  /* Wurde geändert */
   --danger: oklch(0.7 0.05 30);
+  --danger-light: oklch(0.8 0.05 30);
   --warning: oklch(0.7 0.05 100);
   --success: oklch(0.7 0.05 160);
   --info: oklch(0.7 0.05 260);

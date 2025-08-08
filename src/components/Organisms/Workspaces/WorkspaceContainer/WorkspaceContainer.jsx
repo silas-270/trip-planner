@@ -11,7 +11,7 @@ const WorkspaceContainer = ({
         <>
             {(workspaces && workspaces.length > 0) ? (
                 <div
-                    className={styles.workspaceContainer}
+                    className={`${styles.workspaceContainer} glassmorphic`}
                     style={gridStyle}
                 >
                     {workspaces.map(ws => (
@@ -19,7 +19,9 @@ const WorkspaceContainer = ({
                     ))}
                 </div>
             ) : (
-                <div className={styles.emptyMessage}>Keine Workspaces.</div>
+                <div className={`${styles.emptyMessageContainer} glassmorphic`}>
+                    <div className={styles.emptyMessage}>Keine Workspaces.</div>
+                </div>
             )}
         </>
     )

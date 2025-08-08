@@ -32,4 +32,4 @@ const ImagePlaceholder = ({ color }) => (
     </svg>
 );
 
-export default ImagePlaceholder;
+export default ImagePlaceholder

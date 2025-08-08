@@ -50,9 +50,9 @@ const AccommodationView = () => {
                 addToast('error', 'Unzulässiger Modus')
                 return
         }
-        await addAccom(createMethod, cardData)
-        addToast('error', 'neuer Eintrag erstellt')
         close()
+        await addAccom(createMethod, cardData)
+        addToast('success', 'neuer Eintrag erstellt')
     }
 
     const close = () => {
@@ -94,6 +94,7 @@ const AccommodationView = () => {
                     <div className={styles.buttonBar}>
                         <TextButton
                             desktopLabel='Speichern'
+                            type='green'
                             onClick={handleAddAccom}
                         />
                         <TextButton

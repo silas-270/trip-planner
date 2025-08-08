@@ -83,7 +83,8 @@ const WorkspaceView = () => {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <HeaderBar />
             <SectionHeading
-                name='Meine Sammlungen'
+                sectionHeadlineDesktop='Meine Sammlungen'
+                sectionHeadlineMobile='Meine Spaces'
                 buttonLabelMobile='➕' buttonLabelDesktop='➕ Workspace hinzufügen'
                 onClick={() => setShowOwnWorkspaceForm(true)}
             />
@@ -93,7 +94,8 @@ const WorkspaceView = () => {
                 gridStyle={gridStyle}
             />
             <SectionHeading
-                name='Geteilte Sammlungen'
+                sectionHeadlineDesktop='Geteilte Sammlungen'
+                sectionHeadlineMobile='Geteilte Spaces'
                 buttonLabelMobile='➕' buttonLabelDesktop='➕ Workspace hinzufügen'
                 onClick={() => setShowSharedWorkspaceForm(true)}
             />
@@ -120,6 +122,7 @@ const WorkspaceView = () => {
                     <div className={styles.buttonBar}>
                         <TextButton
                             desktopLabel='Speichern'
+                            type='green'
                             onClick={handleAddWs}
                         />
                         <TextButton
@@ -141,6 +144,7 @@ const WorkspaceView = () => {
                     <div className={styles.buttonBar}>
                         <TextButton
                             desktopLabel='Anfragen'
+                            type='green'
                             onClick={handleAccessWs}
                         />
                         <TextButton

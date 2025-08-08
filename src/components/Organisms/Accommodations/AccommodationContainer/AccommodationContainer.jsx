@@ -11,7 +11,7 @@ const WorkspaceContainer = ({
         <>
             {(accommodations && accommodations.length > 0) ? (
                 <div
-                    className={styles.accommodationContainer}
+                    className={`${styles.accommodationContainer} glassmorphic`}
                     style={gridStyle}
                 >
                     {accommodations.map(acc => (
@@ -19,7 +19,9 @@ const WorkspaceContainer = ({
                     ))}
                 </div>
             ) : (
-                <div className={styles.emptyMessage}>Keine Unterkünfte.</div>
+                <div className={`${styles.emptyMessageContainer} glassmorphic`}>
+                    <div className={styles.emptyMessage}>Keine Unterkünfte.</div>
+                </div>
             )}
         </>
     )

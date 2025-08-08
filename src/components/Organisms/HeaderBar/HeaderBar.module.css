@@ -1,5 +1,8 @@
 .HeaderBar {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: row-reverse;
     padding: 12px;
+    gap: 12px;
+    border-radius: 20px;
 }

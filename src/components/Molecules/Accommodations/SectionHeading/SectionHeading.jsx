@@ -155,7 +155,7 @@ const SectionHeading = ({
                     }
                     <h2 className={styles.sectionHeading}>{workspaceMeta?.name?.trim() || 'Workspace'}</h2>
                 </div>
-                <TextButton mobileLabel='➕' desktopLabel='➕ Unterkunft hinzufügen' onClick={() => setShowPopup(true)} />
+                <TextButton mobileLabel='➕' desktopLabel='➕ Unterkunft hinzufügen' type='green' onClick={() => setShowPopup(true)} />
             </div>
 
             {showWorkspaceForm && workspaceMeta && (
@@ -175,11 +175,8 @@ const SectionHeading = ({
                     <div className={styles.buttonBar}>
                         <TextButton
                             desktopLabel='Speichern'
+                            type='green'
                             onClick={handleUpdateWs}
-                        />
-                        <TextButton
-                            desktopLabel='Löschen'
-                            onClick={handleDeleteWorkspace}
                         />
                         <TextButton
                             desktopLabel='Abbrechen'
@@ -190,7 +187,7 @@ const SectionHeading = ({
             )}
 
             {showSharePopup &&
-                <PopupForm onClose={() => closeShareWindow}>
+                <PopupForm onClose={closeShareWindow}>
                     <div className={`${styles.codeDisplay} glassmorphic`}>
                         <span className={styles.codeText}>{shareCode}</span>
                         <button className={styles.copyButton} onClick={onCopy} ref={copyButtonRef}>
