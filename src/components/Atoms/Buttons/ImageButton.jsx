@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ProfilePicturePlaceholder from '../../../assets/profilePicturePlaceholder'
+import ProfilePicturePlaceholder from '../../../assets/ProfilePicturePlaceholder'
 import styles from './ImageButton.module.css'
 
 const ImageButton = ({
