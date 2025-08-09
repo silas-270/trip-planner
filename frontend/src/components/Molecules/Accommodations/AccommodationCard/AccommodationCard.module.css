@@ -1,0 +1,144 @@
+.card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  aspect-ratio: 2.95 / 3;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.placeholderWrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.placeholderWrapper svg {
+  margin-top: 25px;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  padding: 8px 12px 6px;
+}
+
+.rowTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rowTop h2 {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 8px;
+  /* Abstand zum Preis */
+}
+
+.nameLink {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: block;
+  /* wichtig für overflow */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (hover: hover) {
+  .nameLink:hover {
+    color: var(--primary-light);
+  }
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary);
+  flex-shrink: 0;
+  /* verhindert Zeilenumbruch */
+  white-space: nowrap;
+  /* bleibt in einer Zeile */
+  padding-left: 6px;
+  /* „+6px“-Effekt */
+}
+
+.rowBottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  padding-bottom: 12px;
+  margin: 0 12px 12px;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.btnWrapper {
+  width: fit-content;
+  height: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background: var(--bg-light);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  user-select: none;
+}
+
+.editBtn {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.editBtn svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--text-muted);
+  stroke: none;
+  pointer-events: none;
+  transition: color 0.2s ease, fill 0.2s ease;
+  overflow: visible;
+}
+
+@media (hover: hover) {
+  .editBtn:hover svg {
+    fill: var(--text)
+  }
+}
+
+.placeholderWrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.placeholderWrapper svg {
+  width: 100%;
+  height: 100%;
+}

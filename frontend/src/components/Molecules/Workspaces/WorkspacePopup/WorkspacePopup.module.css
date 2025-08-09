@@ -1,0 +1,55 @@
+.workspaceNameInput,
+.workspaceImageInput {
+  font-family: 'Rubik', sans-serif;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.2s;
+  color: var(--text);
+  box-sizing: border-box;
+}
+
+/* Fokus-Stile */
+.workspaceImageInput:focus,
+.workspaceNameInput:focus {
+  border-color: var(--border);
+}
+
+.workspaceImageInput {
+  flex-grow: 1;
+}
+
+/* 🧷 -bild-Input-Zeile */
+.imageInputRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 🔄 Reload--button */
+.workspaceImageReload {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border 0.2s, background-color 0.2s;
+}
+
+@media (hover: hover) {
+  .workspaceImageReload:hover {
+    color: var(--primary-light);
+    border-color: var(--border);
+  }
+}
+
+.workspaceImageReload:active {
+  background-color: var(--bg-light);
+}

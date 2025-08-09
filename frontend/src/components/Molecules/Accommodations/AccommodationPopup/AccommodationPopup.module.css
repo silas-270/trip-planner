@@ -1,0 +1,101 @@
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doubleInputRow {
+  display: flex;
+  gap: 12px;
+}
+
+.Input {
+  font-family: 'Rubik', sans-serif;
+  width: 93%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.2s;
+  color: var(--text);
+}
+
+.buttonBar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.inputModeButton {
+  height: 40px;
+  border: 1px solid var(--border-muted);
+  border-radius: 6px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    min-width 0.3s ease,
+    background-color 0.3s ease,
+    padding 0.3s ease;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.inactive {
+  border-color: var(--border-muted);
+  min-width: 40px;
+  padding: 0;
+}
+
+.active {
+  border-color: var(--border);
+  min-width: 150px;
+  padding: 0 12px;
+  background-color: var(--bg);
+  font-weight: bold;
+}
+
+.iconWrapper,
+.labelWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+
+.iconWrapper {
+  opacity: 1;
+}
+
+.labelWrapper {
+  opacity: 0;
+}
+
+.active .iconWrapper {
+  opacity: 0;
+}
+
+.active .labelWrapper {
+  opacity: 1;
+}
+
+.icon {
+  font-size: 20px;
+}
